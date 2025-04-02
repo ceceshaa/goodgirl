@@ -5,34 +5,34 @@ body {
     font-size: 3em;
     text-align: center;
     scrollbar-width: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
     height: 100vh;
     overflow: hidden;
 }
 
+#obal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* memastikan canvas berada di belakang teks */
+}
+
 .text-container {
-    margin-top: 20px;
     font-family: 'Dancing Script', cursive;
     font-size: 30px;
     color: white;
     text-align: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
 }
 
 .scroll-area {
     max-height: 150px;
     overflow-y: auto;
     padding: 10px;
-}
-
-canvas {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
 }
