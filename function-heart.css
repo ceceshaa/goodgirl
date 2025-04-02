@@ -1,46 +1,59 @@
-/* Global Styles */
 body {
-    background: black;
-    color: #fff;
-    font-family: "Archivo Black", sans-serif;
-    font-size: 3em;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow: hidden;
+  background: black;
+  color: #fff;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 3em;
+  text-align: center;
+  scrollbar-width: none;
 }
 
-/* Canvas Styles */
-#obal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Canvas berada di belakang */
+.heart {
+  fill: rgb(133, 9, 158);
+  position: relative;
+  top: 5px;
+  width: 50px;
+  animation: pulse 1s ease infinite;
 }
 
-canvas {
-    display: block;
-    width: 100vw;
-    height: 100vh;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
 }
 
-/* Text Styles */
-.text-container {
-    font-family: 'Dancing Script', cursive;
-    font-size: 30px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    bottom: 50px; /* Letakkan teks di bagian bawah layar */
+#heart span {
+  width: 100%;
+  display: block;
+  top: 50%;
+  z-index: 1;
 }
 
-.scroll-area {
-    max-height: 150px;
-    overflow-y: auto;
-    padding: 10px;
+#heart {
+  width: 100px;
+  height: 90px;
+  text-align: center;
+  font-size: 16px;
 }
+
+#heart span {
+  width: 100%;
+  display: block;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
