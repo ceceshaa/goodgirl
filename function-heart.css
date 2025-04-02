@@ -1,58 +1,38 @@
 body {
-  background: black;
-  color: #fff;
-  font-family: "Archivo Black", sans-serif;
-  font-size: 3em;
-  text-align: center;
-  scrollbar-width: none;
+    background: black;
+    color: #fff;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 3em;
+    text-align: center;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.heart {
-  fill: red;
-  position: relative;
-  top: 5px;
-  width: 50px;
-  animation: pulse 1s ease infinite;
+.text-container {
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    width: 100%;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-#heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  text-align: center;
-  font-size: 16px;
-  position: relative;
+.scroll-area {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 10px;
 }
 
-#heart span {
-  width: 100%;
-  display: block;
-  top: 50%;
-  z-index: 1;
-}
-
-#heart {
-  width: 100px;
-  height: 90px;
-  text-align: center;
-  font-size: 16px;
-}
-
-#heart span {
-  width: 100%;
-  display: block;
-  left: 0;
-  right: 0;
-  z-index: 1;
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
