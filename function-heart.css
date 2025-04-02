@@ -1,34 +1,42 @@
+/* Global Styles */
 body {
     background: black;
     color: #fff;
     font-family: "Archivo Black", sans-serif;
     font-size: 3em;
     text-align: center;
-    scrollbar-width: none;
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
 }
 
+/* Canvas Styles */
 #obal {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* memastikan canvas berada di belakang teks */
+    z-index: -1; /* Canvas berada di belakang */
 }
 
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Text Styles */
 .text-container {
     font-family: 'Dancing Script', cursive;
     font-size: 30px;
     color: white;
     text-align: center;
     width: 100%;
-    position: relative;
+    position: absolute;
     z-index: 1;
-    margin-top: 20px;
+    bottom: 50px; /* Letakkan teks di bagian bawah layar */
 }
 
 .scroll-area {
