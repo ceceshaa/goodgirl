@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <title>Heart</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="function-heart.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+            color: #fff;
+            font-family: "Archivo Black", sans-serif;
+            font-size: 3em;
+            text-align: center;
+            scrollbar-width: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .text-container {
+            margin-top: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+        .scroll-area {
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Canvas untuk animasi love -->
     <div id="obal">
         <canvas id="c"></canvas>
     </div>
-
-    <!-- Teks yang bisa digulirkan -->
     <div class="text-container scroll-area">
         For My Lovely Wife Ania
     </div>
-
-    <!-- JavaScript untuk animasi love -->
     <script src="function-heart.js"></script>
 </body>
 </html>
