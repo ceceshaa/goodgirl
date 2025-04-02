@@ -1,11 +1,10 @@
-var b = document.body;
 var c = document.getElementsByTagName('canvas')[0];
 var a = c.getContext('2d');
-c.width = innerWidth;
-c.height = innerHeight;
+c.width = window.innerWidth;
+c.height = window.innerHeight;
 
 var h = [], e = [], v = 32, M = Math, R = M.random, C = M.cos, Y = 6.3;
-for (i = 0; i < Y; i += .2) {
+for (var i = 0; i < Y; i += 0.2) {
     h.push([
         c.width / 2 + 180 * M.pow(M.sin(i), 3),
         c.height / 2 + 10 * (-(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i)))
@@ -14,14 +13,14 @@ for (i = 0; i < Y; i += .2) {
 
 i = 0;
 while (i < v) {
-    x = R() * c.width;
-    y = R() * c.height;
-    H = i / v * 80 + 280;
-    S = R() * 40 + 60;
-    B = R() * 60 + 20;
-    f = [];
+    var x = R() * c.width;
+    var y = R() * c.height;
+    var H = i / v * 80 + 280;
+    var S = R() * 40 + 60;
+    var B = R() * 60 + 20;
+    var f = [];
 
-    k = 0;
+    var k = 0;
     while (k < v) {
         f[k++] = {
             x: x,
@@ -32,9 +31,9 @@ while (i < v) {
             S: R() + 1,
             q: ~~(R() * v),
             D: i % 2 * 2 - 1,
-            F: R() * .2 + .7,
+            F: R() * 0.2 + 0.7,
             f: "hsla(" + ~H + "," + S + "%," + ~B + "%,.1)"
-        }
+        };
     }
     e[i++] = f;
 }
@@ -53,18 +52,18 @@ function loop() {
 
     i = v;
     while (i--) {
-        f = e[i];
-        u = f[0];
-        q = h[u.q];
-        D = u.x - q[0];
-        E = u.y - q[1];
-        G = M.sqrt((D * D) + (E * E));
+        var f = e[i];
+        var u = f[0];
+        var q = h[u.q];
+        var D = u.x - q[0];
+        var E = u.y - q[1];
+        var G = M.sqrt((D * D) + (E * E));
 
         if (G < 10) {
-            if (R() > .95) {
+            if (R() > 0.95) {
                 u.q = ~~(R() * v);
             } else {
-                if (R() > .99) u.D *= -1;
+                if (R() > 0.99) u.D *= -1;
                 u.q += u.D;
                 u.q %= v;
                 if (u.q < 0) u.q += v;
@@ -81,10 +80,10 @@ function loop() {
 
         k = 0;
         while (k < v - 1) {
-            T = f[k];
-            N = f[++k];
-            N.x -= (N.x - T.x) * .7;
-            N.y -= (N.y - T.y) * .7;
+            var T = f[k];
+            var N = f[++k];
+            N.x -= (N.x - T.x) * 0.7;
+            N.y -= (N.y - T.y) * 0.7;
             render(N);
         }
     }
